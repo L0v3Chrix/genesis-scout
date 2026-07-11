@@ -1,0 +1,11 @@
+-- Scout core schema — applied 2026-07-10 via Supabase MCP to project ddpyrpuhwjgrvkpevvav
+-- (genesis-scout) as version 001_scout_core. Additive; rollback = drop the created objects.
+-- Objects: subscribers, my_tier()/is_ops()/is_paid()/handle_new_subscriber(), counties,
+-- signal_sources, signals, saved_searches, export_events, audit_events, RLS policies,
+-- signal_detail(uuid) paid-gated RPC. Full DDL is the exact SQL applied via MCP; see
+-- docs or the migration record. Mirrored here as source of truth for review/reapply.
+-- NOTE: keep in sync with the applied migration; this file documents the same statements.
+
+-- (002) ops-write policies for signal ingest + reference tables — applied 2026-07-10 as 002_signal_ingest_policies
+-- (003) signal_detail marked VOLATILE (it inserts an audit row on paid access) — applied as 003_signal_detail_volatile
+-- See the live project for exact DDL; these companions keep the mirror honest.
